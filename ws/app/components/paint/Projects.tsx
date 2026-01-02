@@ -117,17 +117,14 @@ const projectsData: ProjectCardProps[] = [
 
 export function Projects() {
   return (
-    <div className="flex-1 bg-[#dce8f5] overflow-auto">
-      <div className="max-w-7xl mx-auto px-8 py-12">
+    <div className="flex-1  overflow-auto">
+      <div className="max-w-7xl mx-auto px-8 py-20">
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-6xl font-bold mb-4" style={{ color: "#7092be" }}>
             my projects
           </h1>
-          <p className="text-gray-600 text-xl max-w-3xl">
-            A collection of projects I've worked on, from web applications to machine learning experiments. 
-            Click on any project to view the code or try a live demo.
-          </p>
+          
         </div>
 
         {/* Projects Grid */}

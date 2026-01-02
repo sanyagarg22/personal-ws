@@ -83,59 +83,66 @@ export function Ribbon({
 
   return (
     <div className="bg-[#f5f6f7] border-b border-[#d0d0d0]">
-      {/* Tabs with Title Bar */}
-      <div className="flex items-center bg-[#dce8f5] border-b border-[#b8d0ec]">
-        {/* Left side - File button and tabs */}
-        <div className="flex items-center">
-          <button className="px-3 py-1 text-s font-medium text-white bg-[#2b579a] hover:bg-[#1e4174] flex items-center gap-1">
-            Sanya Garg
-          </button>
-          <button
+      {/* Navigation Bar - Tab-like appearance */}
+      <div className="flex items-end bg-[#dce8f5] border-b-2 border-[#b8d0ec] px-4 pt-3">
+        {/* Left side - Logo/Name and Navigation Tabs */}
+        <div className="flex items-end gap-4">
+          <button 
             onClick={() => onTabChange("Home")}
-            className={`px-4 py-1.5 text-xs ${
-              activeTab === "Home"
-                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
-                : "text-gray-600 hover:bg-[#e5e5e5]"
-            }`}
+            className="px-4 py-2 text-md font-semibold text-[#7092be] rounded-t transition-colors flex items-center gap-2 mb-0"
           >
-            Home
+            <span>sanya garg</span>
           </button>
-          <button 
-            onClick={() => onTabChange("About Me")}
-            className={`px-4 py-1.5 text-xs ${
-              activeTab === "About Me"
-                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
-                : "text-gray-600 hover:bg-[#e5e5e5]"
-            }`}
-          >
-            About Me
-          </button>
-          <button 
-            onClick={() => onTabChange("Projects")}
-            className={`px-4 py-1.5 text-xs ${
-              activeTab === "Projects"
-                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
-                : "text-gray-600 hover:bg-[#e5e5e5]"
-            }`}
-          >
-            Projects
-          </button>
-          <button 
-            onClick={() => onTabChange("Free Paint")}
-            className={`px-4 py-1.5 text-xs ${
-              activeTab === "Free Paint"
-                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
-                : "text-gray-600 hover:bg-[#e5e5e5]"
-            }`}
-          >
-            Free Paint
-          </button>
+          
+          {/* Navigation Tabs - Connected to content below */}
+          <nav className="flex items-end gap-0.5">
+            <button
+              onClick={() => onTabChange("Home")}
+              className={`px-6 py-2.5 text-sm font-medium rounded-t-lg transition-all relative ${
+                activeTab === "Home"
+                  ? "bg-[#f5f6f7] text-[#2b579a] border-x border-t border-[#d0d0d0] -mb-px z-10 shadow-sm"
+                  : "text-gray-700 hover:bg-[#c4daf3] hover:text-[#2b579a] bg-[#dce8f5]"
+              }`}
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => onTabChange("About Me")}
+              className={`px-6 py-2.5 text-sm font-medium rounded-t-lg transition-all relative ${
+                activeTab === "About Me"
+                  ? "bg-[#f5f6f7] text-[#2b579a] border-x border-t border-[#d0d0d0] -mb-px z-10 shadow-sm"
+                  : "text-gray-700 hover:bg-[#c4daf3] hover:text-[#2b579a] bg-[#dce8f5]"
+              }`}
+            >
+              About
+            </button>
+            <button 
+              onClick={() => onTabChange("Projects")}
+              className={`px-6 py-2.5 text-sm font-medium rounded-t-lg transition-all relative ${
+                activeTab === "Projects"
+                  ? "bg-[#f5f6f7] text-[#2b579a] border-x border-t border-[#d0d0d0] -mb-px z-10 shadow-sm"
+                  : "text-gray-700 hover:bg-[#c4daf3] hover:text-[#2b579a] bg-[#dce8f5]"
+              }`}
+            >
+              Projects
+            </button>
+            <button 
+              onClick={() => onTabChange("Free Paint")}
+              className={`px-6 py-2.5 text-sm font-medium rounded-t-lg transition-all relative ${
+                activeTab === "Free Paint"
+                  ? "bg-[#f5f6f7] text-[#2b579a] border-x border-t border-[#d0d0d0] -mb-px z-10 shadow-sm"
+                  : "text-gray-700 hover:bg-[#c4daf3] hover:text-[#2b579a] bg-[#dce8f5]"
+              }`}
+            >
+              Free Paint
+            </button>
+          </nav>
         </div>
 
         {/* Right side - Quick access and window controls */}
         <div className="flex items-center ml-auto">
           {/* Quick Access Toolbar - hidden on Projects page */}
-          {activeTab !== "Projects" && (
+          {activeTab !== "Projects" && activeTab !== "About Me" && (
             <div className="flex items-center gap-0.5 px-1 border-r border-[#b8d0ec]">
               <button
                 onClick={onSave}
@@ -178,7 +185,7 @@ export function Ribbon({
       </div>
 
       {/* Ribbon Content - hidden on Projects page */}
-      {activeTab !== "Projects" && (
+      {activeTab !== "Projects" && activeTab !== "About Me" && (
       <div className="flex items-stretch px-2 py-1 h-[90px]">
         {/* Clipboard Group */}
         <div className="flex flex-col items-center h-full">
