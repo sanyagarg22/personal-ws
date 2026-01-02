@@ -20,6 +20,9 @@ export function PaintApp() {
   const [cursorPosition, setCursorPosition] = useState<{ x: number; y: number } | undefined>();
   const [zoom, setZoom] = useState(100);
 
+  // Tab state
+  const [activeTab, setActiveTab] = useState<string>("Home");
+
   const handleCanvasSizeChange = useCallback((width: number, height: number) => {
     setCanvasSize({ width, height });
   }, []);
@@ -72,6 +75,8 @@ export function PaintApp() {
         onSave={handleSave}
         onUndo={handleUndo}
         onRedo={handleRedo}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
       />
       
       {/* Canvas Area */}
@@ -79,12 +84,11 @@ export function PaintApp() {
         primaryColor={primaryColor}
         secondaryColor={secondaryColor}
         activeTool={activeTool}
+        activeTab={activeTab}
         brushSize={brushSize}
         onColorPick={handleColorPick}
         onSizeChange={handleCanvasSizeChange}
         onCursorMove={handleCursorPositionChange}
-        overlayText="hello!"
-        overlayText2="welcome to my personal website inspired by the legacy microsoft paint app."
       />
       
       {/* Status Bar */}

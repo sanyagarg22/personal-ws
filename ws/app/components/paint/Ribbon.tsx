@@ -14,6 +14,8 @@ interface RibbonProps {
   onSave: () => void;
   onUndo: () => void;
   onRedo: () => void;
+  activeTab: string;
+  onTabChange: (tab: string) => void;
 }
 
 const PRESET_COLORS = [
@@ -40,6 +42,8 @@ export function Ribbon({
   onSave,
   onUndo,
   onRedo,
+  activeTab,
+  onTabChange,
 }: RibbonProps) {
   const ToolButton = ({ 
     tool, 
@@ -86,11 +90,35 @@ export function Ribbon({
           <button className="px-3 py-1 text-s font-medium text-white bg-[#2b579a] hover:bg-[#1e4174] flex items-center gap-1">
             Sanya Garg
           </button>
-          <button className="px-4 py-1.5 text-s bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px">
+          <button
+            onClick={() => onTabChange("Home")}
+            className={`px-4 py-1.5 text-xs ${
+              activeTab === "Home"
+                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
+                : "text-gray-600 hover:bg-[#e5e5e5]"
+            }`}
+          >
             Home
           </button>
-          <button className="px-4 py-1.5 text-s text-gray-600 hover:bg-[#e5e5e5]">
+          <button 
+            onClick={() => onTabChange("About Me")}
+            className={`px-4 py-1.5 text-xs ${
+              activeTab === "About Me"
+                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
+                : "text-gray-600 hover:bg-[#e5e5e5]"
+            }`}
+          >
             About Me
+          </button>
+          <button 
+            onClick={() => onTabChange("Free Paint")}
+            className={`px-4 py-1.5 text-xs ${
+              activeTab === "Free Paint"
+                ? "bg-[#f5f6f7] border-x border-t border-[#d0d0d0] rounded-t -mb-px"
+                : "text-gray-600 hover:bg-[#e5e5e5]"
+            }`}
+          >
+            Free Paint
           </button>
         </div>
 
@@ -192,7 +220,7 @@ export function Ribbon({
             <ToolButton tool="pencil" icon="✏️" label="Pencil" />
             <ToolButton tool="fill" icon="🪣" label="Fill" />
             <ToolButton tool="text" icon={<span className="font-serif font-bold text-base">A</span>} label="Text" />
-            <ToolButton tool="eraser" icon="🧹" label="Eraser" />
+            <ToolButton tool="eraser" icon="🧽" label="Eraser" />
             <ToolButton tool="picker" icon="💧" label="Color picker" />
             <ToolButton tool="brush" icon="🔍" label="Magnifier" />
           </div>
