@@ -139,7 +139,7 @@ export function Ribbon({
                   : "text-gray-700 hover:bg-[#c4daf3] hover:text-[#2b579a] bg-[#dce8f5]"
               }`}
             >
-              Free Paint
+              Canvas
             </button>
           </nav>
         </div>

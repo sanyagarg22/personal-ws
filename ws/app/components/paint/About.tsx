@@ -1,6 +1,5 @@
 "use client";
 
-// Work experience data - replace with your actual experiences
 const workExperiences = [
   {
     company: "Datadog",
@@ -20,33 +19,25 @@ const workExperiences = [
     period: "Summer 2024",
     description: "Developed a Python library to streamline the creation and validation of spacecraft commands.",
   },
-  // {
-  //   company: "GE Healthcare",
-  //   role: "Software Engineering Intern",
-  //   period: "Summer 2023",
-  //   description: "Scaled and modernized the Emitter Calibration tool by migrating it to a microservices architecture and enabling reliable deployment on CT machines.",
-  // },
+  {
+    company: "GE Healthcare",
+    role: "Software Engineering Intern",
+    period: "Summer 2023",
+    description: "Scaled and modernized the Emitter Calibration tool by migrating it to a microservices architecture and enabling reliable deployment on CT machines.",
+  },
 ];
 
-export function AboutMe() {
+export function About() {
   return (
     <div className="flex-1  overflow-auto">
       <div className="max-w-7xl mx-auto px-8 py-20">
         <div className="flex items-start gap-30">
           <div className="flex-1 max-w-2xl">
-            {/* <div className="text-7xl font-bold mb-8" style={{ color: "#7092be" }}>
-              about me
-            </div> */}
-            <img
-              src="/hello.png"
-              alt="hello doodle"
-              className="w-50 h-30 object-cover"
-            />
+            <img src="/hello.png" alt="hello" className="w-50 h-30 object-cover"/>
             <div className="text-gray-600 text-xl mb-10 mt-10">
               I'm a software engineer and recent graduate from Rice University currently based in the SF bay area. In addition to doodling in Microsoft Paint, I like to dabble in many forms of art, try new foods and restaurants (and keep track of them on Beli), and play pickleball and squash. Feel free to check out some of my art and other projects below!
             </div>
             
-            {/* Work Experience Section */}
             <div className="mb-12">
               <h3 className="text-3xl font-bold mb-6" style={{ color: "#7092be" }}>
                 work experience
@@ -85,7 +76,6 @@ export function AboutMe() {
         </div>
       </div>
       
-      {/* Art Gallery Section */}
       {/* <Art /> */}
     </div>
   );
@@ -99,7 +89,6 @@ export function Art() {
           my art
         </div>
         <div className="grid grid-cols-3 gap-6">
-          {/* Placeholder art images - replace with your actual art */}
           <div>
             <img 
               src="/art1.jpg" 

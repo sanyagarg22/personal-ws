@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { Tool } from "./types";
 import { Projects } from "./Projects";
-import { AboutMe } from "./AboutMe";
+import { About } from "./About";
 
 interface CanvasProps {
   primaryColor: string;
@@ -267,7 +267,7 @@ export function Canvas({
       {showProjects && <Projects />}
 
       {/* About Me page - shown when About Me tab is active */}
-      {showAboutMe && <AboutMe />}
+      {showAboutMe && <About />}
     </>
   );
 }
