@@ -16,8 +16,7 @@ export function StatusBar({
   onZoomChange 
 }: StatusBarProps) {
   return (
-    <div className="flex items-center justify-between h-6 px-1 bg-[#f0f0f0] border-t border-[#d0d0d0] text-[11px] text-gray-600">
-      {/* Left side - cursor position and selection */}
+    <div className="relative flex items-center h-6 px-1 bg-[#f0f0f0] border-t border-[#d0d0d0] text-[11px] text-gray-600 max-w-l">
       <div className="flex items-center gap-3">
         {cursorPosition && (
           <div className="flex items-center gap-1">
@@ -27,14 +26,9 @@ export function StatusBar({
         )}
       </div>
 
-      {/* Center - copyright */}
-      <div className="flex-1 text-center">
-        <span className="text-gray-500">© sanya garg 2026</span>
-      </div>
+      <span className="absolute left-25 text-gray-500">© sanya garg 2026</span>
 
-      {/* Right side - canvas size and zoom */}
-      <div className="flex items-center gap-2">
-        {/* Canvas size */}
+      <div className="flex items-center gap-2 ml-auto">
         <div className="flex items-center gap-1 px-2 border-l border-r border-gray-300">
           <span className="text-gray-400">📐</span>
           <span>{canvasWidth} × {canvasHeight}px</span>
