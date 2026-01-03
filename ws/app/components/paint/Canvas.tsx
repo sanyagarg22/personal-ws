@@ -312,7 +312,7 @@ export function Icons(){
       </a>
       <a 
         href="mailto:sanya.garg@gmail.com" 
-        className="w-8 h-8 flex items-center justify-center hover:color transition-opacity text-gray-600"
+        className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity text-gray-600"
         title="Email"
       >
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
